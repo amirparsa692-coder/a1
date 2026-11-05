@@ -1,0 +1,73 @@
+# ============================================================
+#  Technamooz AI — technamooz-ai-version2.0.0
+#  Developer / Author: Amir Parsa (امیر پارسا)
+#  Platform: Cloudflare Workers (100% edge, free tier)
+#  Telegram: @technamooz   |   Support: @technamooz_support
+# ============================================================
+#  Storage: Workers KV (cache, rate limits, sessions, short tokens)
+#           + D1 (users, conversations, messages, memory, assistants,
+#              personas, provider configs, logs, backups)
+#  AI: Workers AI [ai] binding (free) + remote providers via fetch
+# ============================================================
+
+name = "technamooz-ai"
+main = "src/index.js"
+compatibility_date = "2026-11-04"
+
+# ── Static assets (public chat + admin panel + logo) ──
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "none"
+run_worker_first = true
+
+# ── Cloudflare Workers AI — FREE, configured automatically ──
+[ai]
+binding = "AI"
+
+# ── KV: cache, rate limits, sessions, short-lived tokens ──
+[[kv_namespaces]]
+binding = "KV"
+id = ""
+
+# ── D1: structured data (users, conversations, messages, memory, …) ──
+[[d1_databases]]
+binding = "DB"
+database_name = "technamooz_ai"
+database_id = ""
+
+# ── Optional custom domain ──
+# routes = [
+#   { pattern = "chat.your-domain.ir", custom_domain = true }
+# ]
+
+[vars]
+APP_VERSION = "2.0.0"
+APP_NAME = "Technamooz AI"
+APP_FA_NAME = "تکناموز"
+APP_AUTHOR = "امیر پارسا"
+APP_AUTHOR_EN = "Amir Parsa"
+APP_PACKAGE = "technamooz-ai-version2.0.0"
+APP_TAGLINE = "دستیار هوش مصنوعی حرفه‌ای تکناموز"
+APP_DESCRIPTION = "پلتفرم چت هوش مصنوعی، ربات تلگرام و پنل مدیریت روی Cloudflare Workers"
+APP_SUPPORT_TELEGRAM = "https://t.me/technamooz_support"
+APP_SUPPORT_HANDLE = "@technamooz_support"
+APP_WEBSITE = "https://technamooz.ai"
+ADMIN_PATH = "/admin"
+SESSION_TTL_SEC = "43200"
+LOGIN_TRIES = "6"
+LOGIN_WINDOW_SEC = "900"
+CHAT_RATE_LIMIT = "35"
+CHAT_RATE_WINDOW_SEC = "600"
+PBKDF2_ITERATIONS = "2500"
+PBKDF2_MAX_ITERATIONS = "100000"
+MAX_TOKENS_NORMAL = "4096"
+MAX_TOKENS_DEEP = "12288"
+ROUNDS_CAP = "24"
+MEMORY_ENABLED = "true"
+FACTS_ENABLED = "true"
+FALLBACK_ENABLED = "true"
+MAINTENANCE = "false"
+MODEL_CACHE_TTL_HOURS = "6"
+PICKER_TTL_SEC = "900"
+BROADCAST_BATCH = "10"

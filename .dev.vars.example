@@ -1,0 +1,48 @@
+# ============================================================
+#  Technamooz AI — .dev.vars.example
+#  Author: Amir Parsa (امیر پارسا)
+#  نسخه 2.0.0
+#
+#  این فایل را کپی کنید به .dev.vars و مقادیر را پر کنید.
+#  در تولید، از `wrangler secret put` برای مقادیر حساس استفاده کنید.
+# ============================================================
+
+# --- احراز هویت ادمین ---
+# رمز عبور اولیه پنل ادمین (فقط برای توسعه؛ در تولید از wrangler secret استفاده شود)
+ADMIN_PASSWORD=admin
+
+# --- رمزنگاری ---
+# کلید ۳۲ بایتی هگزادسیمال برای AES-GCM (تولید خودکار در setup.mjs)
+# مثال: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+ENCRYPTION_KEY=your-32-byte-hex-key-here
+
+# --- ربات تلگرام (اختیاری) ---
+TELEGRAM_BOT_TOKEN=your-bot-token-from-botfather
+TELEGRAM_WEBHOOK_SECRET=your-webhook-secret
+
+# --- کلیدهای ارائه‌دهنده (اختیاری، هر کدام را فقط اگر استفاده می‌کنید تنظیم کنید) ---
+OPENROUTER_API_KEY=sk-or-...
+GROQ_API_KEY=gsk_...
+GEMINI_API_KEY=...
+
+# --- حساب Cloudflare (برای Workers AI از طریق REST، اختیاری) ---
+# اگر [ai] binding فعال است، این دو لازم نیستند
+CF_ACCOUNT_ID=your-cloudflare-account-id
+CF_API_TOKEN=your-cloudflare-api-token
+
+# --- متغیرهای برنامه (در wrangler.toml هم تعریف شده‌اند) ---
+# APP_VERSION=2.0.0
+# APP_NAME=Technamooz AI
+# APP_AUTHOR=امیر پارسا
+# SESSION_TTL_SEC=43200
+# CHAT_RATE_LIMIT=35
+# LOGIN_TRIES=6
+# LOGIN_WINDOW_SEC=900
+# MAX_TOKENS_NORMAL=4096
+# MAX_TOKENS_DEEP=12288
+# ROUNDS_CAP=24
+# MEMORY_ENABLED=true
+# FACTS_ENABLED=true
+# FALLBACK_ENABLED=true
+# MAINTENANCE=false
+# ADMIN_PATH=/admin

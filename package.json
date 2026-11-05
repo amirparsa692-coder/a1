@@ -1,0 +1,26 @@
+{
+  "name": "technamooz-ai",
+  "version": "2.0.0",
+  "description": "Technamooz AI — technamooz-ai-version2.0.0 — Professional AI chat platform on Cloudflare Workers: web chat + Telegram bot + admin panel. Providers: Workers AI, OpenRouter, OrcaRouter, OneRouter, Gemini, Groq, Cerebras, SambaNova, Hugging Face, GitHub Models, Mistral, NVIDIA NIM, Cohere. Author: Amir Parsa (امیر پارسا).",
+  "author": "Amir Parsa (امیر پارسا)",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "check": "node scripts/check-syntax.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:sse": "node scripts/test-sse-parser.mjs",
+    "assets": "node scripts/generate-assets.mjs",
+    "migrate": "npx wrangler d1 migrations apply technamooz_ai --local 2>/dev/null; npx wrangler d1 migrations apply technamooz_ai --remote 2>/dev/null || echo 'D1 migrate applied (or will apply on deploy)'",
+    "webhook": "node scripts/webhook.mjs",
+    "predeploy": "npm run check && npm test",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "wrangler": "^3.114.17"
+  }
+}

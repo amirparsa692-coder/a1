@@ -1,0 +1,27 @@
+{
+  "name": "تکناموز — Technamooz AI v2.0.0",
+  "short_name": "تکناموز",
+  "description": "دستیار هوش مصنوعی حرفه‌ای تکناموز — وب‌چت، ربات تلگرام و ۲۱ عامل متخصص. ساختهٔ امیر پارسا.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0e12",
+  "theme_color": "#0c0e12",
+  "dir": "rtl",
+  "lang": "fa",
+  "icons": [
+    {
+      "src": "/assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities", "education"],
+  "screenshots": []
+}
