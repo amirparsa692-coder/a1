@@ -28,13 +28,13 @@ binding = "AI"
 # ── KV: cache, rate limits, sessions, short-lived tokens ──
 [[kv_namespaces]]
 binding = "KV"
-id = ""
+id = "f015358ca5764158863521425ee7374d"
 
 # ── D1: structured data (users, conversations, messages, memory, …) ──
 [[d1_databases]]
 binding = "DB"
 database_name = "technamooz_ai"
-database_id = ""
+database_id = "d8d00567-de1a-45f1-9b04-5b6d18cf493e"
 
 # ── Optional custom domain ──
 # routes = [
